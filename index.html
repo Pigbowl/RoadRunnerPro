@@ -3118,6 +3118,7 @@
 
             drawRoadShape(start, end, roadId);
             drawRoadelement(start, end, roadId);
+            console.log("Road number",road.id," Element Drawing Done")
         }
 
         // 绘制道路
@@ -3339,7 +3340,7 @@
 
             // 添加到SVG
             roadSvg.appendChild(roadGroup);
-            console.log("Road number",road.id," Shape Drawing Done")            
+            // console.log("Road number",road.id," Shape Drawing Done")            
         }
 
         // 添加一个新函数，用于同时导出地图数据和图片，并使用统一的文件名
@@ -3693,7 +3694,7 @@
 
             // 添加到SVG
             roadSvg.appendChild(roadGroup);
-            console.log("Road number",road.id," Element Drawing Done")            
+            // console.log("Road number",road.id," Element Drawing Done")            
         }
 
         // 添加绘制调整后车道线的辅助函数
@@ -4488,7 +4489,7 @@
             const tooltip = document.getElementById('mouse-position-tooltip');
             const currentroad = event.target.closest('.road-shape-group');
             const now = new Date(); 
-            console.log(currentroad,now);
+            // console.log(currentroad,now);
             if (mainMode === 'generator' && currentMode === 'road') {
                 if (inzone) {
                     tooltip.textContent = `将创建新道路与${closestroadtype} ${closestroad}相连`;
@@ -5514,3 +5515,4 @@
 </body>
 
 </html>
+
