@@ -1369,9 +1369,9 @@
                 }
                 point_index = findNearestPoint(currentpos,allpoints)
                 if (point_index > parentrode.leftboundshape.length){
-                    console.log("It's on the rightside",parentrode)
+                    // console.log("It's on the rightside",parentrode)
                 }else{
-                    console.log("It's on the leftside")
+                    // console.log("It's on the leftside")
                 }
             }
             // 添加到物体数组
@@ -1950,7 +1950,7 @@
                             // 检查两条路沿线段之间的交点
                             if (edge1.points && edge2.points) {
                                 if (linkage){
-                                    console.log("road number",road1.id, "and road number", road2.id, "is intersected")
+                                    // console.log("road number",road1.id, "and road number", road2.id, "is intersected")
                                     const map_patch =[];
                                     const edgeIntersections = findEdgeIntersections(edge1.points, edge2.points);
                                     if (edgeIntersections[0] && edgeIntersections[1]){
@@ -2015,7 +2015,7 @@
                                         road2todeal.shapecutting = 0;
                                     }
                                 }else{
-                                    console.log("road number",road1.id, "and road number", road2.id, "is overlapped")
+                                    // console.log("road number",road1.id, "and road number", road2.id, "is overlapped")
                                 }
                             }
                             
@@ -2728,7 +2728,7 @@
                         }
                        
                         if (startroadconnection != selectedRoadId){
-                            console.log("No need")
+                            // console.log("No need")
                         }else{
                             if (startaligndirection == 'end'){
                                 roads[startroadIndex].endalignment = roadstartalignment;
@@ -2738,7 +2738,7 @@
                             }
                         }
                     }else{
-                        console.log("No need")
+                        // console.log("No need")
                     }
 
                     if (endroadIndex != -1){
@@ -2749,7 +2749,7 @@
                                 endroadconnection = roads[endroadIndex].endalignref.id; }
                        
                         if (endroadconnection != selectedRoadId){
-                            console.log("No need")
+                            // console.log("No need")
                         }else{
 
                         if (endaligndirection == 'start'){
@@ -2759,7 +2759,7 @@
                             roads[endroadIndex].endalignment = choices[invertchoice];
                         }}
                     }else{
-                        console.log("No need")
+                        // console.log("No need")
                     }
                     
                     // 更新车道线设置
@@ -3027,7 +3027,7 @@
             const roadIdText = document.querySelector(`#road-id-text-${road.id}`);
             const backgroundRect = document.querySelector(`#road-id-text-background-${road.id}`);
 
-            console.log("redrawing road",road.id)
+            // console.log("redrawing road",road.id)
             if (roadElement && roadElement.parentNode && roadShape && roadShape.parentNode && roadIdText && backgroundRect) {
                 // 移除旧道路
                 roadElement.parentNode.removeChild(roadElement);
@@ -3118,7 +3118,6 @@
 
             drawRoadShape(start, end, roadId);
             drawRoadelement(start, end, roadId);
-            console.log("Road number",roadId," Element Drawing Done")
         }
 
         // 绘制道路
@@ -4488,8 +4487,7 @@
         function updateMousePositionTooltip(clientX, clientY, canvasX, canvasY) {
             const tooltip = document.getElementById('mouse-position-tooltip');
             const currentroad = event.target.closest('.road-shape-group');
-            const now = new Date(); 
-            // console.log(currentroad,now);
+            // console.log(currentroad);
             if (mainMode === 'generator' && currentMode === 'road') {
                 if (inzone) {
                     tooltip.textContent = `将创建新道路与${closestroadtype} ${closestroad}相连`;
@@ -5513,7 +5511,4 @@
         位置: X: 0, Y: 0
     </div>
 </body>
-
 </html>
-
-
